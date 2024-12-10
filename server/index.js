@@ -6,7 +6,14 @@ require("dotenv").config(); // Load .env variables
 
 const app = express(); // creating a server
 app.use(express.json()); // used to parse json data
-app.use(cors()); // used for cross origin resource sharing
+// used for cross origin resource sharing
+app.use(
+  cors({
+    origin: "https://deploy-mern-1whq.vercel1.app", // Allow requests from this origin
+    methods: ["GET", "POST"], // Allow specific HTTP methods
+    credentials: true, // Allow sending cookies
+  })
+);
 
 // connecting to database
 mongoose.connect(process.env.MONGO_URI);

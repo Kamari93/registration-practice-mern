@@ -16,3 +16,4 @@ Back-End App:
 1. npm init -y
 2. npm install express mongoose cors nodemon
 3. Create file inside the folder and write the code there
+4. Make sure node version is used correctly for vercel

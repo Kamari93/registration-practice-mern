@@ -21,7 +21,7 @@ app.use(
 mongoose.connect(process.env.MONGO_URI);
 
 app.get("/", (request, response) => {
-  response.json({ message: "Keep Going!" });
+  response.json("Keep Going!");
 });
 
 app.post("/register", (request, response) => {

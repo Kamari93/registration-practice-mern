@@ -7,12 +7,18 @@ function App() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  axios.defaults.withCredentials = true;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(name, email, password);
     axios
-      .post("http://localhost:5000/register", { name, email, password })
+      // .post("http://localhost:5000/register", { name, email, password })
+      .post("https://registration-practice-mern-server.vercel.app/register", {
+        name,
+        email,
+        password,
+      })
       .then((result) => console.log(result.data))
       .catch((err) => console.log(err));
   };
